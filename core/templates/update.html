@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1>Tarefas</h1>
+        <div class=""> 
+            <form action="{% url 'update' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label  class="form-label">Titulo</label>
+                    <input type="text" name="titulo" value="{{ task.titulo }}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descrição</label>
+                    <textarea type="text" name="descricao" class="form-control" rows="3">{{ task.descricao }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Data Criação</label>
+                    <input type="date" name="criado_em" value="{{ task.criado_em|date:'Y-m-d' }}" class="form-control" placeholder="Digite a descrição">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Data Vencimento</label>
+                    <input type="date" name="vence_em" value="{{ task.vence_em|date:'Y-m-d' }}" class="form-control" placeholder="Digite a descrição">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Prioridade</label>
+                    <select name="prioridade" class="form-select">
+                        <option value="1" {% if task.prioridade == '1'%}selected{% endif %}>Baixa</option>
+                        <option value="2" {% if task.prioridade == '2'%}selected{% endif %}>Média</option>
+                        <option value="3" {% if task.prioridade == '3'%}selected{% endif %}>Alta</option>
+                    </select>
+                </div>
+                 <div class="mb-3 form-check">
+                    <input type="checkbox" name="concluida" class="form-check-input" id="concluida" {% if task.concluida %}checked{% endif %}>
+                    <label class="form-check-label" for="concluida">Concluída</label>
+                </div>
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'core' %}" class="btn btn-secondary btn-sm">Cancelar</a>
+                        <button type="submit" class="btn btn-success btn-sm">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
