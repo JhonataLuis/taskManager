@@ -19,8 +19,8 @@ class Task(models.Model):
     concluida = models.BooleanField(default=False)
     prioridade = models.IntegerField(choices=PRIORITY_CHOICES, default=2)
 
-def __srt__(self):
-    return self.titulo, self.descricao
+    def __srt__(self):
+        return self.titulo, self.descricao, self.criado_em, self.vence_em, self.concluida, self.prioridade
 
 class Meta:
     ordering = ['-prioridade', 'vence_em']
