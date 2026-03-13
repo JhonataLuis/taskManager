@@ -8,37 +8,88 @@
   </head>
   <body>
     <div class="container">
-        <h1>Hello, world!</h1>
-
-        <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Concluída</th>
-            <th scope="col">Prioridade</th>
-            <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        {% for task in tarefas %}
-        <tbody>
-            <tr>
-            <th scope="row">{{ task.id }}</th>
-            <td>{{ task.titulo }}</td>
-            <td>{{ task.descricao }}</td>
-            <td>{{ task.concluido }}</td>
-            <td>{{ task.prioridade }}</td>
-            <td>
-                <div class="d-grip gap-2 d-md-block">
-                    <a class="btn btn-warning btn-sm">Editar</a>
-                    <a class="btn btn-danger btn-sm">Delete</a>
+        <h1>Tarefas</h1>
+        <div class=""> 
+            <form action="{% url 'salvar' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label  class="form-label">Titulo</label>
+                    <input type="text" name="titulo" class="form-control" placeholder="Digite o titulo da tarefa">
                 </div>
-            </td>
-            </tr>
-        </tbody>
-        {% endfor %}
-        </table>
+                <div class="mb-3">
+                    <label class="form-label">Descrição</label>
+                    <textarea type="text" name="descricao" class="form-control" rows="2" placeholder="Digite a descrição"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Data Criação</label>
+                    <input type="date" name="criado_em" class="form-control" placeholder="Digite a descrição">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Data Vencimento</label>
+                    <input type="date" name="vence_em" class="form-control" placeholder="Digite a descrição">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Prioridade</label>
+                    <select name="prioridade" class="form-select">
+                        <option value="1">Baixa</option>
+                        <option value="2">Média</option>
+                        <option value="3">Alta</option>
+                    </select>
+                </div>
+                 <div class="mb-3 form-check">
+                    <input type="checkbox" name="concluida" class="form-check-input" id="concluida">
+                    <label class="form-check-label" for="concluida">Concluída</label>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success btn-sm w-100">Salvar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">Lista de Tarefas</h5>
+                </div>
+                <div class="card-body">
+                    {% if tarefas %}
+                    <div class="table-responsive">
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Concluída</th>
+                    <th scope="col">Prioridade</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                {% for task in tarefas %}
+                <tbody>
+                    <tr>
+                    <th scope="row">{{ task.id }}</th>
+                    <td>{{ task.titulo }}</td>
+                    <td>{{ task.descricao }}</td>
+                    <td>{{ task.concluido }}</td>
+                    <td>{{ task.prioridade }}</td>
+                    <td>
+                        <div class="d-grip gap-2 d-md-block">
+                            <a class="btn btn-warning btn-sm">Editar</a>
+                            <a class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+                </table>
+                </div>
+                {% else %}
+                    <p class="text-center text-muted my-4">Nenhuma tarefa cadastrada.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>

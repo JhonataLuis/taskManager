@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from .views import home
+from .views import home, salvar
 
 urlpatterns = [
     path('', home),
+    path('salvar/', salvar, name="salvar")
 
 ]
