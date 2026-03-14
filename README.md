@@ -1,17 +1,26 @@
 # 🗂️ Task Manager - Gerenciador de Tarefas
 
+```markdown
+![Python](https://img.shields.io/badge/python-≥3.10-blue?logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-4.x-green)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![License](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Versão](https://img.shields.io/badge/versão-1.0-blue)
+
+<p align="center">
+  <a href="#-快速上手"><img src="https://img.shields.io/badge/快速上手-5_分钟-blue?style=for-the-badge" alt="Quick Start"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-≥3.10-blue?logo=python&logoColor=white" alt="Python">
+</p>
+
 ## 🎯 Objetivo do Projeto
-O **Task Manager** é uma aplicação web simples e intuitiva para gerenciamento de tarefas diárias, desenvolvida com **Django** e **Bootstrap**.  
+O **Task Manager** é uma aplicação web simples e intuitiva para gerenciamento de tarefas diárias, desenvolvida com **Python**, **Django** e **Bootstrap**.  
 
 O sistema permite que usuários organizem suas atividades de forma eficiente através de um **CRUD completo de tarefas**.
 
 ---
-
-```markdown
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Django](https://img.shields.io/badge/Django-4.x-green)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## ✨ Funcionalidades
 
@@ -55,8 +64,7 @@ Remover tarefas concluídas ou indesejadas.
 - Bootstrap 5
 
 **Banco de Dados**
-- SQLite (desenvolvimento)
-- PostgreSQL (produção)
+- PostgreSQL (Desenvolvimento)
 
 **Outros**
 - Bootstrap Icons
@@ -82,7 +90,7 @@ taskManager/
 │ ├── migrations/
 │ └── templates/
 │ ├── index.html
-│ └── editar.html
+│ └── update.html
 └── config/
 ├── init.py
 ├── settings.py
