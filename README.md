@@ -76,7 +76,6 @@ Remover tarefas concluídas ou indesejadas.
 
 taskManager/
 ├── manage.py
-├── db.sqlite3
 ├── requirements.txt
 ├── .gitignore
 ├── core/
