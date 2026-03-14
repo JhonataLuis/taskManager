@@ -7,14 +7,6 @@
 ![License](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![Versão](https://img.shields.io/badge/versão-1.0-blue)
 
-<p align="center">
-  <a href="#-快速上手"><img src="https://img.shields.io/badge/快速上手-5_分钟-blue?style=for-the-badge" alt="Quick Start"></a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/python-≥3.10-blue?logo=python&logoColor=white" alt="Python">
-</p>
-
 ## 🎯 Objetivo do Projeto
 O **Task Manager** é uma aplicação web simples e intuitiva para gerenciamento de tarefas diárias, desenvolvida com **Python**, **Django** e **Bootstrap**.  
 
