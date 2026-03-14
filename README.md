@@ -1,11 +1,13 @@
 # 🗂️ Task Manager - Gerenciador de Tarefas
 
-```markdown
+```
 ![Python](https://img.shields.io/badge/python-≥3.10-blue?logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-4.x-green)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
 ![License](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![Versão](https://img.shields.io/badge/versão-1.0-blue)
+
+---
 
 ## 🎯 Objetivo do Projeto
 O **Task Manager** é uma aplicação web simples e intuitiva para gerenciamento de tarefas diárias, desenvolvida com **Python**, **Django** e **Bootstrap**.  
