@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Editar Tarefa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
     <div class="container">
-        <h1>Tarefas</h1>
-        <div class=""> 
+        <h1>Editar Tarefas</h1>
+        <div class="card"> 
             <form action="{% url 'update' task.id %}" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
@@ -42,8 +42,8 @@
                     <label class="form-check-label" for="concluida">Concluída</label>
                 </div>
                     <div class="d-flex justify-content-between">
-                        <a href="core/" class="btn btn-secondary btn-sm">Cancelar</a>
-                        <button type="submit" class="btn btn-success btn-sm">Salvar Alterações</button>
+                        <a href="core/" class="btn btn-secondary btn-sm"><i class="bi bi-chevron-left"></i> Cancelar</a>
+                        <button type="submit" class="btn btn-success btn-sm"><i class="bi bi-check-circle"></i> Salvar Alterações</button>
                     </div>
                 </form>
             </div>

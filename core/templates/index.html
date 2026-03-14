@@ -61,8 +61,9 @@
                     <th scope="col">ID</th>
                     <th scope="col">Titulo</th>
                     <th scope="col">Descrição</th>
-                    <th scope="col">Concluída</th>
                     <th scope="col">Prioridade</th>
+                    <th scope="col">Vencimento</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -72,8 +73,23 @@
                     <th scope="row">{{ task.id }}</th>
                     <td>{{ task.titulo }}</td>
                     <td>{{ task.descricao }}</td>
-                    <td>{{ task.concluido }}</td>
-                    <td>{{ task.prioridade }}</td>
+                    <td>
+                        {% if task.prioridade == 3 %}
+                            <span class="badge bg-danger">Alta</span>
+                        {% elif task.prioridade == 2 %}    
+                            <span class="badge bg-warning text-dark">Média</span>
+                        {% else %}
+                            <span class="badge bg-info">Baixa</span>    
+                        {% endif %}
+                    </td>
+                    <td>{{ task.vence_em|default:"-" }}</td>
+                    <td>
+                        {% if task.concluida %}
+                            <span class="badge bg-success">Concluída</span>
+                        {% else %}
+                            <span class="badge bg-secondary">Pendente</span>
+                        {% endif %}
+                    </td>
                     <td>
                         <div class="d-grip gap-2 d-md-block">
                             <a href="{% url 'editar' task.id %}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i>Editar</a>
@@ -86,7 +102,7 @@
                 </table>
                 </div>
                 {% else %}
-                    <p class="text-center text-muted my-4">Nenhuma tarefa cadastrada.</p>
+                    <p class="text-center text-muted my-4"><i class="bi bi-alarm-fill"></i> Nenhuma tarefa cadastrada.</p>
                     {% endif %}
                 </div>
             </div>
