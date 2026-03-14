@@ -1,6 +1,5 @@
 # 🗂️ Task Manager - Gerenciador de Tarefas
 
-```
 ![Python](https://img.shields.io/badge/python-≥3.10-blue?logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-4.x-green)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
@@ -9,12 +8,20 @@
 
 ---
 
-## 🎯 Objetivo do Projeto
+## 📌 Descrição
 O **Task Manager** é uma aplicação web simples e intuitiva para gerenciamento de tarefas diárias, desenvolvida com **Python**, **Django** e **Bootstrap**.  
 
 O sistema permite que usuários organizem suas atividades de forma eficiente através de um **CRUD completo de tarefas**.
 
 ---
+
+## 📖 Detalhes
+Este projeto foi desenvolvido com o objetivo de **praticar conceitos de desenvolvimento web fullstack**, como:  
+- Integração entre **frontend e backend**  
+- Persistência de dados com **ORM e PostgreSQL**  
+- Templates dinâmicos com **Django**  
+
+É ideal para **equipes que desejam centralizar suas tarefas em um ambiente simples e eficiente**. 
 
 ## ✨ Funcionalidades
 
@@ -31,19 +38,6 @@ Editar informações de tarefas existentes.
 
 **Delete**  
 Remover tarefas concluídas ou indesejadas.
-
----
-
-## 📌 Campos da Tarefa
-
-| Campo | Descrição | Tipo |
-|------|-----------|------|
-| Título | Nome da tarefa | CharField |
-| Descrição | Detalhamento da atividade | TextField |
-| Data Criação | Quando a tarefa foi criada | DateField |
-| Data Vencimento | Prazo para conclusão | DateField |
-| Prioridade | Baixa, Média ou Alta | CharField |
-| Status | Pendente ou Concluída | BooleanField |
 
 ---
 
@@ -64,6 +58,17 @@ Remover tarefas concluídas ou indesejadas.
 - Bootstrap Icons
 - Git
 - GitHub
+
+---
+
+## 📌 Campos da Tarefa
+
+| Camada         | Tecnologias /Ferramentas                |
+|----------------|----------------------------|
+| Backend        | Python, Django             |
+| Frontend       | HTML5, CSS3, Javascript    | 
+| UI / Estilo    | Bootstrap                  | 
+| Banco de Dados | PostgreSQL                 |
 
 ---
 
@@ -104,7 +109,7 @@ taskManager/
 
 ---
 
-## Passo a Passo
+## ⚙️ Instalação e Execução
 
 ```bash
 # 1. Clone o repositório
@@ -134,7 +139,7 @@ python manage.py migrate
 python manage.py runserver
 
 # 8. Acesse no navegador
-http://127.0.0.1:8000
+👉 http://127.0.0.1:8000
 
 🔄 Rotas da Aplicação
 
@@ -145,7 +150,8 @@ http://127.0.0.1:8000
 | `/editar/<int:id>/`  | GET / POST | editar  | Edita tarefa           |
 | `/deletar/<int:id>/` | GET        | deletar | Remove tarefa          |
 
-📸 Funcionalidades em Ação
+🔑 Funcionalidades
+
 ✅ Lista de Tarefas
 
 Visualização em tabela com todas as tarefas e seus status.
@@ -162,7 +168,9 @@ Formulário preenchido automaticamente para atualização de dados.
 
 Remoção com confirmação para evitar exclusões acidentais.
 
-Como Contribuir
+🤝 Contribuições
+
+Contribuições são sempre bem-vindas!
 
 Faça um fork do projeto
 
@@ -183,3 +191,7 @@ Abra um Pull Request
 👨‍💻 Autor
 
 Jhonata Luis
+
+💼 LinkedIn: https://www.linkedin.com/in/jhonataluisdesenvolvedorjava/
+
+🐙 GitHub: https://github.com/JhonataLuis
